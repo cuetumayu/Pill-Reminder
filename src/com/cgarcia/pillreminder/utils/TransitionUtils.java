@@ -1,13 +1,18 @@
 package com.cgarcia.pillreminder.utils;
 
 import android.app.Activity;
+import android.content.Intent;
 
+import com.cgarcia.pillreminder.activity.DrugListActivity;
 import com.cgarcia.pillreminder.domain.Treatment;
 
 public class TransitionUtils {
 
-	public static void goToDrugList(Activity source, Treatment treatment) {
-		// TODO
-	}
+	public static String SELECTED_TREATMENT = "SELECTED_TREATMENT";
 
+	public static void goToDrugList(Activity source, Treatment treatment) {
+		Intent target = new Intent(source, DrugListActivity.class);
+		target.putExtra(SELECTED_TREATMENT, treatment);
+		source.startActivity(target);
+	}
 }

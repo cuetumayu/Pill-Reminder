@@ -1,6 +1,8 @@
 package com.cgarcia.pillreminder.domain;
 
-public class Drug {
+import java.io.Serializable;
+
+public class Drug implements Serializable {
 
 	protected String _name;
 

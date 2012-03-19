@@ -1,8 +1,9 @@
 package com.cgarcia.pillreminder.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Reminder {
+public class Reminder implements Serializable {
 
 	protected Date _startDate;
 
@@ -13,6 +14,10 @@ public class Reminder {
 	protected int _firstTimeMin;
 
 	protected int _timesADay;
+
+	public Reminder() {
+
+	}
 
 	public Reminder(Date startDate, Date endDate, int firstTimeHour,
 			int firstTimeMin, int timesADay) {

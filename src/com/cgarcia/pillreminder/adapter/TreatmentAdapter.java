@@ -33,7 +33,7 @@ public class TreatmentAdapter extends ArrayAdapter<Treatment> {
 		Treatment currTreatment = getItem(position);
 		nameView.setText(currTreatment.getName());
 		TextView periodView = (TextView) rowView
-				.findViewById(R.id.treatment_name);
+				.findViewById(R.id.treatment_period);
 		periodView.setText(PeriodUtils.getTreatmentPeriodStr(currTreatment));
 		return rowView;
 	}
