@@ -4,6 +4,10 @@ import java.util.List;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -45,5 +49,28 @@ public class TreatmentListActivity extends Activity implements
 		Toast.makeText(getApplicationContext(), "Clicked element: " + position,
 				Toast.LENGTH_SHORT).show();
 		TransitionUtils.goToDrugList(this, _treatments.get(position));
+	}
+
+	/* */
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.treatment_list_menu, menu);
+		return true;
+	}
+
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.add_treatment:
+			TransitionUtils.goToCreateTreatment(this);
+			break;
+		case R.id.options:
+			TransitionUtils.goToOptions(this);
+			break;
+		default:
+			return false;
+		}
+		return true;
 	}
 }

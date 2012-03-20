@@ -29,10 +29,12 @@ public class DrugAdapter extends ArrayAdapter<Drug> {
 		TextView nameView = (TextView) rowView.findViewById(R.id.drug_name);
 		Drug currDrug = getItem(position);
 		nameView.setText(currDrug.getName());
-		TextView periodView = (TextView) rowView
-				.findViewById(R.id.drug_times_a_day);
-		periodView.setText(currDrug.getReminder().getTimesADay()
-				+ " times a day");
+		if (currDrug.getReminder() != null) {
+			TextView periodView = (TextView) rowView
+					.findViewById(R.id.drug_times_a_day);
+			periodView.setText(currDrug.getReminder().getTimesADay()
+					+ " times a day");
+		}
 		return rowView;
 	}
 }

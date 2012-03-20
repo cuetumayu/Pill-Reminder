@@ -2,6 +2,9 @@ package com.cgarcia.pillreminder.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -51,6 +54,24 @@ public class DrugListActivity extends Activity implements OnItemClickListener {
 					.getSerializable(TransitionUtils.SELECTED_TREATMENT);
 		}
 		return treat;
+	}
 
+	/* */
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.drug_list_menu, menu);
+		return true;
+	}
+
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch(item.getItemId()){
+		case R.id.add_drug:
+			TransitionUtils.goToCreateDrug(this);
+			break;
+		default:
+			return false;
+		}
+		return true;
 	}
 }

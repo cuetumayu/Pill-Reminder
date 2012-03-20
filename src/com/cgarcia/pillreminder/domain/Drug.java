@@ -4,6 +4,11 @@ import java.io.Serializable;
 
 public class Drug implements Serializable {
 
+	/**
+	 * Serialization ID
+	 */
+	private static final long serialVersionUID = -4690887955322414045L;
+
 	protected String _name;
 
 	protected String _description;

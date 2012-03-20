@@ -5,6 +5,11 @@ import java.util.Date;
 
 public class Reminder implements Serializable {
 
+	/**
+	 * Serialization ID
+	 */
+	private static final long serialVersionUID = 2048376548398323230L;
+
 	protected Date _startDate;
 
 	protected Date _endDate;

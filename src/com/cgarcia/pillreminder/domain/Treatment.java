@@ -5,6 +5,11 @@ import java.util.List;
 
 public class Treatment implements Serializable {
 
+	/**
+	 * Serialization ID
+	 */
+	private static final long serialVersionUID = -1567502553043154247L;
+
 	protected String _name;
 
 	protected List<Drug> _drugs;
